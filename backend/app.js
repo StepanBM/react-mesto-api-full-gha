@@ -42,7 +42,7 @@ app.use(auth);
 app.use('/users', userRoutes);
 app.use('/cards', cardsRoutes);
 
-app.use(errorLogger);
+//app.use(errorLogger);
 
 app.use(errors());
 
