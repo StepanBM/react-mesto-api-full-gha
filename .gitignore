@@ -1,1 +1,4 @@
 backend/node_modules/
+backend/request.log
+backend/error.log
+frontend/node_modules/
