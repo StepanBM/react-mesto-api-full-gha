@@ -20,6 +20,8 @@ function Card({ card, onCardClick, onBasketCard, onCardLike }) {
   //Определяем, являемся ли мы владельцем текущей карточки
   const isOwn = card.owner._id === currentUser._id;
 
+  console.log("Информация о создателе", isOwn, currentUser);
+
   const isLiked = card.likes.some((i) => i._id === currentUser._id);
   const cardLikeButtonClassName = `element__button ${
     isLiked && "element__button_active"
