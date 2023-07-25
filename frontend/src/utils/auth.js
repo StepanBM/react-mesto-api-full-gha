@@ -28,6 +28,7 @@ export function loginUser(email, password) {
 }
 
 export function checkValidityToken(jwt) {
+  console.log(`Проверка токена: ${jwt}`);
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
