@@ -11,6 +11,8 @@ const cardsRoutes = require('./routes/cards');
 
 const { auth } = require('./middlewares/auth');
 
+const { cors } = require('./middlewares/cors');
+
 const { login, addUser } = require('./controllers/users');
 
 const { validatorLogin, validatorAddUser } = require('./middlewares/validator');
@@ -21,6 +23,8 @@ const NotDataError = require('./errors/NotDataError');
 
 const { PORT = 3000 } = process.env;
 const app = express();
+
+app.use(cors);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
