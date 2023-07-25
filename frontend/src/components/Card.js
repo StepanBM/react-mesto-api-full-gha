@@ -18,9 +18,7 @@ function Card({ card, onCardClick, onBasketCard, onCardLike }) {
 
   const currentUser = React.useContext(CurrentUserContext);
   //Определяем, являемся ли мы владельцем текущей карточки
-  const isOwn = card.owner._id === currentUser._id;
-
-  console.log("Информация о создателе", isOwn, currentUser);
+  const isOwn = card.owner === currentUser._id;
 
   const isLiked = card.likes.some((i) => i._id === currentUser._id);
   const cardLikeButtonClassName = `element__button ${
