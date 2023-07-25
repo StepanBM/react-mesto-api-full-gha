@@ -1,0 +1,21 @@
+.element__button-cancel {
+    min-width: 18px;
+    min-height: 19px;
+    background-image: url(../../../images/Basket.svg);
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    padding: 0;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    position: absolute;
+    z-index: 2;
+    margin-top: 20px;
+    margin-left: 244px;
+  }
+  
+  .element__button-cancel:hover {
+    opacity: 0.6;
+  }

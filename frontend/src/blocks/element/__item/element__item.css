@@ -1,0 +1,8 @@
+.element__item {
+  width: 282px;
+  height: 282px;
+  display: block;
+  border-radius: 10px 10px 0px 0px;
+  position: relative;
+  cursor: pointer;
+}
