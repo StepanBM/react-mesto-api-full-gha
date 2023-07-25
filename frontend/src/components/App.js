@@ -92,7 +92,6 @@ function App() {
         .then((res) => {
           if (res) {
             setIsLoggedIn(true);
-            console.log(res);
             setEmail(res.email);
           }
         })
