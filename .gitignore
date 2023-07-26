@@ -2,5 +2,3 @@ backend/node_modules/
 *.log
 frontend/node_modules/
 backend/.env
-.editorconfig
-.eslintrc
