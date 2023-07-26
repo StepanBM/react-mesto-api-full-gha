@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 51.250.79.205
 
-Frontend https://...
+Frontend https://mestostepan.nomoredomains.xyz/
 
-Backend https://...
+Backend https://api.mestostepan.nomoredomains.xyz/
