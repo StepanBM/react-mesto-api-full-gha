@@ -39,6 +39,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/signin', validatorLogin, login);
 app.post('/signup', validatorAddUser, addUser);
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.use(auth);
 
 app.use('/users', userRoutes);
@@ -53,12 +59,6 @@ app.use('', (req, res, next) => {
 });
 
 app.use(serverError);
-
-/* app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-}); */
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
