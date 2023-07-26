@@ -126,7 +126,7 @@ const login = (req, res, next) => {
       // Создадим токен
       User.findOne({ email }).select('+password')
         .then((user) => {
-          const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+          const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
           // Вернём токен
           res.status(200).send({ token });
         });
