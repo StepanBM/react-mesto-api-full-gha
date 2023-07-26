@@ -15,7 +15,7 @@ const { auth } = require('./middlewares/auth');
 
 const { cors } = require('./middlewares/cors');
 
-const { requestLogger, errorLogger } = require("./middlewares/logger");
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { login, addUser } = require('./controllers/users');
 
@@ -31,7 +31,6 @@ const app = express();
 app.use(requestLogger);
 
 app.use(cors);
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
