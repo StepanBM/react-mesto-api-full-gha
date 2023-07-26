@@ -5,6 +5,7 @@ const cors = (req, res, next) => {
     'https://mestostepan.nomoredomains.xyz',
     'http://mestostepan.nomoredomains.xyz',
     'http://localhost:3000',
+    'http://127.0.0.1:3000',
   ];
   const { origin } = req.headers; // Сохраняем источник запроса в переменную origin
   // проверяем, что источник запроса есть среди разрешённых
