@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес http://51.250.79.205
+IP 51.250.79.205
 
 Frontend https://mestostepan.nomoredomains.xyz/
 
