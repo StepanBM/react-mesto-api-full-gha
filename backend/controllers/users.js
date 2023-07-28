@@ -128,7 +128,7 @@ const login = (req, res, next) => {
         .then((user) => {
           const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
           // Вернём токен
-          res.status(200).send({ token });
+          return res.status(200).send({ token });
         });
     })
     .catch(next);
