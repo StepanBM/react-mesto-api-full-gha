@@ -28,9 +28,12 @@ const NotDataError = require('./errors/NotDataError');
 const { PORT = 3000 } = process.env;
 const app = express();
 
-app.on('connection', (socket) => {
-  socket.setTimeout(30 * 1000);
-  // 30 second timeout. Change this as you see fit.
+app.use((req, res, next) => {
+  req.socket.on('error', () => {
+  });
+  res.socket.on('error', () => {
+  });
+  next();
 });
 
 app.use(requestLogger);
