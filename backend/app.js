@@ -30,8 +30,10 @@ const app = express();
 
 app.use((req, res, next) => {
   req.socket.on('error', () => {
+    res.status(400).end('Ошибка сокета в запросе');
   });
   res.socket.on('error', () => {
+    res.status(400).end('Ошибка сокета в ответе');
   });
   next();
 });
