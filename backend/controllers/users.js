@@ -6,6 +6,8 @@ const NotDataError = require('../errors/NotDataError');
 const IncorrectDataError = require('../errors/IncorrectDataError');
 const EmailExistsError = require('../errors/EmailExistsError');
 
+const { JWT_SECRET, NODE_ENV } = process.env;
+
 const getUsersAll = (req, res, next) => {
   User.find({})
     .then((users) => res.status(200).send(users))
@@ -22,7 +24,7 @@ const getUserMe = (req, res, next) => {
       return res.status(200).send(user);
     })
     .catch((err) => {
-      if (err.name === 'ValidationError') {
+      if (err.name === 'CastError') {
         next(new IncorrectDataError('Некорректный _id'));
       }
       next(err);
@@ -126,7 +128,7 @@ const login = (req, res, next) => {
       // Создадим токен
       User.findOne({ email }).select('+password')
         .then((user) => {
-          const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+          const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
           // Вернём токен
           return res.status(200).send({ token });
         });
