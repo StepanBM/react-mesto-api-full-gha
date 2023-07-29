@@ -28,16 +28,6 @@ const NotDataError = require('./errors/NotDataError');
 const { PORT = 3000 } = process.env;
 const app = express();
 
-app.use((req, res, next) => {
-  req.socket.on('error', () => {
-    res.status(400).end('Ошибка сокета в запросе');
-  });
-  res.socket.on('error', () => {
-    res.status(400).end('Ошибка сокета в ответе');
-  });
-  next();
-});
-
 app.use(requestLogger);
 
 app.use(cors);
