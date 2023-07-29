@@ -49,13 +49,13 @@ app.use(auth);
 app.use('/users', userRoutes);
 app.use('/cards', cardsRoutes);
 
-app.use(errorLogger);
-
-app.use(errors());
-
 app.use('', (req, res, next) => {
   next(new NotDataError('Данного пути не существует'));
 });
+
+app.use(errorLogger);
+
+app.use(errors());
 
 app.use(serverError);
 
